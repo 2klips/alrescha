@@ -261,8 +261,23 @@ pre {
 /* Share-card capture only (see README). */
 .og-card .nav,
 .og-card .header-tools,
-.og-card .hero .actions {
+.og-card .hero .actions,
+.og-card .hero .lead,
+.og-card .hero-note,
+.og-card .lb.coord:not(.dec) {
   display: none;
+}
+
+/* On the card the plain who-and-what line carries the message, and the
+   copy sits a little higher so the knot's caption clears the bottom edge. */
+.og-card .hero {
+  padding: 72px 0 96px;
+}
+
+.og-card .hero .audience {
+  max-width: 17em;
+  font-size: 1.75rem;
+  line-height: 1.45;
 }
 
 /* Header */
@@ -292,14 +307,14 @@ pre {
 }
 
 .nav a,
-.header-login {
+.header-cta {
   color: var(--fg-muted);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .nav a:hover,
-.header-login:hover {
+.header-cta:hover {
   color: var(--fg);
 }
 
@@ -334,8 +349,13 @@ pre {
   height: 18px;
 }
 
-.header-login {
+/* Phones lose the section nav, so the header keeps one way to the pilot.
+   No sign-in link: sign-up stays open until the invite-only gate is on. */
+.header-cta {
+  display: none;
   padding: 8px 4px;
+  color: var(--fg);
+  font-weight: 600;
 }
 
 /* Buttons */
@@ -429,15 +449,32 @@ pre {
   }
 }
 
-.hero .lead {
+/* Who it is for, in one plain line under the headline. */
+.hero .audience {
   margin-top: 28px;
-  max-width: 27em;
+  max-width: 24em;
+  color: var(--fg);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.hero .lead {
+  margin-top: 16px;
+  max-width: 28em;
   color: var(--fg-muted);
   font-size: var(--step-17);
 }
 
 .hero .actions {
-  margin-top: 40px;
+  margin-top: 36px;
+}
+
+.hero-note {
+  margin-top: 14px;
+  max-width: 30em;
+  color: var(--fg-faint);
+  font-size: var(--step-13);
 }
 
 /* Where the product stands today: one plain line, the knot ring as its mark. */
@@ -701,27 +738,12 @@ pre {
   max-width: 44rem;
 }
 
-/* The name */
-.name-note {
-  max-width: 44rem;
-}
-
-.latin-display {
-  font-family: var(--font-latin);
-  font-size: var(--step-80);
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  font-optical-sizing: auto;
-  color: var(--fg);
-}
-
+/* The cord with its knot, above the section title. */
 .crossbar {
   display: block;
   width: 240px;
   height: 24px;
-  margin: 28px 0 36px;
+  margin: 0 0 32px;
 }
 
 .crossbar circle,
@@ -826,6 +848,34 @@ pre {
   grid-template-columns: 5em minmax(0, 1fr);
 }
 
+/* The name, as a short note after what the product does. */
+.name-origin {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 32px;
+  margin-top: clamp(64px, 8vw, 112px);
+  padding-top: 28px;
+  border-top: 1px solid var(--rule);
+  color: var(--fg-faint);
+  font-size: var(--step-15);
+}
+
+.latin-word {
+  color: var(--fg-muted);
+  font-family: var(--font-latin);
+  font-size: var(--step-40);
+  font-style: italic;
+  font-optical-sizing: auto;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.origin-text {
+  flex: 1 1 22em;
+  max-width: 40em;
+}
+
 /* Mini sky */
 .brain {
   margin-top: 36px;
@@ -876,22 +926,11 @@ pre {
   stroke-width: 0.7;
 }
 
-.read-flare .rf-star,
-.read-flare .rf-core {
+/* The file the example asks about. A fixed mark: the page does not
+   animate a read, because a live glow on read is not promised. */
+.asked-star .as-mark,
+.asked-star .as-core {
   fill: var(--accent);
-}
-
-.read-flare .rf-ring {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1;
-  opacity: 0.6;
-}
-
-.read-flare .rf-star,
-.read-flare .rf-ring {
-  transform-box: fill-box;
-  transform-origin: center;
 }
 
 .brain-labels {
@@ -957,6 +996,27 @@ pre {
   grid-template-columns: 7.5em minmax(0, 1fr);
 }
 
+.feature-list dt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: flex-start;
+  gap: 6px 8px;
+}
+
+/* Deployed, but not yet seen working in production. */
+.tag {
+  display: inline-block;
+  padding: 0 8px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  color: var(--fg-muted);
+  font-size: var(--step-13);
+  font-weight: 500;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
 /* Paths and tool names only, never Korean. */
 .where {
   display: block;
@@ -970,10 +1030,14 @@ pre {
   overflow-wrap: anywhere;
 }
 
-.group-note {
-  margin-top: 16px;
-  color: var(--fg-faint);
-  font-size: var(--step-13);
+.caveat {
+  margin-top: 24px;
+  padding: 14px 18px;
+  border-left: 2px solid var(--accent);
+  background: var(--bg-raised);
+  color: var(--fg-muted);
+  font-size: var(--step-15);
+  line-height: 1.7;
 }
 
 /* The moment */
@@ -1021,7 +1085,7 @@ pre {
   fill: var(--fg-muted);
 }
 
-.step-flare .mark svg {
+.step-find .mark svg {
   fill: var(--accent);
 }
 
@@ -1129,6 +1193,15 @@ pre {
   font-size: var(--step-15);
 }
 
+.promise-body p + p {
+  margin-top: 14px;
+}
+
+.promise-body .aside {
+  color: var(--fg-faint);
+  font-size: var(--step-15);
+}
+
 .not-yet {
   margin: 0;
   padding: 0;
@@ -1224,9 +1297,14 @@ pre {
   color: var(--fg-muted);
 }
 
-.copyright {
+.copyright,
+.maker {
   color: var(--fg-muted);
   font-size: var(--step-13);
+}
+
+.maker a {
+  text-underline-offset: 3px;
 }
 
 .credit {
@@ -1271,22 +1349,15 @@ pre {
   .tw4 { --tw-d: 4.9s; --tw-delay: 4.1s; }
   .tw5 { --tw-d: 6.1s; --tw-delay: 3.7s; }
 
-  /* Everything is visible without script; once a figure comes into
-     view its read-flare plays a single time. */
-  .is-lit .rf-star {
-    animation: flare 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) 0.25s both;
-  }
-
-  .is-lit .rf-ring {
-    animation: ring 1.1s ease-out 0.4s both;
-  }
-
+  /* Everything is visible without script; once the example comes into
+     view its timeline draws a single time. Nothing flares: the page does
+     not show a live read. */
   .scene.is-lit::before {
     animation: cord-x 1.1s cubic-bezier(0.45, 0.05, 0.3, 1) both;
   }
 
-  .scene.is-lit .step-flare .mark svg {
-    animation: flare 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.55s both;
+  .scene.is-lit .step-find .mark svg {
+    animation: fade-in 0.6s ease 0.55s both;
   }
 
   .scene.is-lit .step-take .mark svg {
@@ -1334,6 +1405,10 @@ pre {
 @media (max-width: 960px) {
   .nav {
     display: none;
+  }
+
+  .header-cta {
+    display: inline-block;
   }
 
   .header-tools {
@@ -1413,8 +1488,13 @@ pre {
     min-height: auto;
   }
 
-  .hero .lead {
+  .hero .audience {
     margin-top: 20px;
+    font-size: 1.125rem;
+  }
+
+  .hero .lead {
+    margin-top: 12px;
     font-size: var(--step-15);
   }
 
@@ -1440,8 +1520,8 @@ pre {
     font-size: var(--step-24);
   }
 
-  .latin-display {
-    font-size: var(--step-64);
+  .latin-word {
+    font-size: var(--step-24);
   }
 
   .ledger > div,

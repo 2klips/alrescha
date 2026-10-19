@@ -118,7 +118,7 @@
   const headerBoxes = (host) => {
     const hr = host.getBoundingClientRect();
     const out = [];
-    for (const el of document.querySelectorAll(".site-header .home, .site-header .nav a, .site-header .theme-toggle, .site-header .header-login")) {
+    for (const el of document.querySelectorAll(".site-header .home, .site-header .nav a, .site-header .theme-toggle, .site-header .header-cta")) {
       const r = el.getBoundingClientRect();
       if (r.width) out.push([r.left - hr.left - 14, r.top - hr.top - 10, r.right - hr.left + 14, r.bottom - hr.top + 10]);
     }
@@ -138,7 +138,7 @@
           return m ? { s: m.a, ox: m.e - rect.left, oy: m.f - rect.top } : { s: 0.7, ox: 0, oy: 0 };
         },
         // Labels knock out the stars behind them, as on a printed atlas.
-        boxes(hero, ".hero-copy .status, .hero-copy h1, .hero-copy .lead, .hero-copy .btn", 22, 10)
+        boxes(hero, ".hero-copy .status, .hero-copy h1, .hero-copy .audience, .hero-copy .lead, .hero-copy .btn, .hero-copy .hero-note", 22, 10)
           .concat(boxes(hero, ".sky-labels .lb, .knot-caption", 3, 2))
           .concat(headerBoxes(hero)),
         (() => {
@@ -184,8 +184,8 @@
     window.addEventListener("resize", schedule);
   }
 
-  /* The read-flares play once when their figure comes into view. */
-  const lit = document.querySelectorAll(".brain, .scene");
+  /* The example's timeline draws once when it comes into view. */
+  const lit = document.querySelectorAll(".scene");
   if (calm.matches || !("IntersectionObserver" in window)) {
     lit.forEach((el) => el.classList.add("is-lit"));
   } else {
