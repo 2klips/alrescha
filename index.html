@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alrescha · 흩어진 맥락을 한 매듭으로</title>
-<meta name="description" content="바이브 코딩 프로젝트의 진행과 남은 일을 한 보드에 모으고, 저장소를 밤하늘 지도로 엮어 코딩 에이전트가 근거를 찾아 읽게 해요.">
+<meta name="description" content="GitHub 저장소를 한 번 연결하면 코딩 에이전트가 MCP로 프로젝트 지도를 받고, 같은 기억과 진행 기록을 나눠 써요. 원본 코드는 저장하지 않아요. 지금은 초대제 파일럿을 준비하고 있어요.">
 <meta name="color-scheme" content="dark light">
 <meta name="theme-color" content="#0B1620" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F4F8F9" media="(prefers-color-scheme: light)">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Alrescha · 흩어진 맥락을 한 매듭으로">
-<meta property="og:description" content="프로젝트 보드와 밤하늘 지도, 두 개의 끈을 한 매듭으로 묶어요.">
+<meta property="og:description" content="프로젝트 보드와 밤하늘 지도, 두 개의 끈을 한 매듭으로 묶어요. 지금은 초대제 파일럿을 준비하고 있어요.">
 <meta property="og:image" content="og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -46,8 +46,10 @@
   <a class="home" href="#top" aria-label="Alrescha 처음으로"><span class="brand-wordmark" aria-hidden="true"></span></a>
   <nav class="nav" aria-label="페이지 안내">
     <a href="#cords">두 개의 끈</a>
+    <a href="#features">할 수 있는 일</a>
     <a href="#moment">읽는 순간</a>
     <a href="#promises">약속</a>
+    <a href="#pilot">파일럿</a>
   </nav>
   <div class="header-tools">
     <button class="theme-toggle" type="button" aria-label="화면 테마 바꾸기">
@@ -62,11 +64,12 @@
     <canvas class="field" aria-hidden="true"></canvas>
     <div class="hero-inner wrap">
       <div class="hero-copy">
+        <p class="status"><span class="status-mark" aria-hidden="true"></span>지금 상태: 초대제 파일럿 준비 중</p>
         <h1 id="hero-title">흩어진 맥락을<br>한 매듭으로</h1>
-        <p class="lead">바이브 코딩 프로젝트의 진행과 남은 일을 한 보드에 모으고, 저장소를 밤하늘 지도로 엮어 코딩 에이전트가 근거를 찾아 읽게 해요.</p>
+        <p class="lead">GitHub 저장소를 한 번 연결해요. 코딩 에이전트는 MCP로 프로젝트 지도를 받고, 같은 기억과 진행 기록을 나눠 써요. 사람은 그 기록을 홈, 지도, 진행 화면에서 봐요. 원본 코드는 저장하지 않아요.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://arr-app-web.vercel.app/">데모 보기</a>
-          <a class="btn btn-quiet" href="https://arr-app-web.vercel.app/auth/login">로그인</a>
+          <a class="btn btn-primary" href="#pilot">파일럿 문의</a>
+          <a class="btn btn-quiet" href="https://arr-app-web.vercel.app/">데모 보기</a>
         </div>
       </div>
       <figure class="chart" aria-labelledby="chart-note">
@@ -90,7 +93,7 @@
         <article class="pillar">
           <p class="kicker">첫째 끈</p>
           <h3>프로젝트 보드</h3>
-          <p class="pillar-lead">어디까지 왔고 무엇이 남았는지 한 화면에서 봐요. 보드의 숫자는 모두 저장된 출처에서 나와요.</p>
+          <p class="pillar-lead">연결한 레포마다 카드 한 장과 관측소 한 곳이 생겨요. 어디까지 왔고 무엇이 남았는지 봐요. 숫자는 모두 저장된 기록에서 나와요.</p>
           <dl class="ledger">
             <div>
               <dt>진행</dt>
@@ -98,15 +101,19 @@
             </div>
             <div>
               <dt>할 일</dt>
-              <dd>TODO 문서와 에이전트가 남긴 진행 기록에서 모아요.</dd>
+              <dd>TODO 문서의 체크박스와 에이전트가 남긴 진행 기록에서 모아요. 7일 넘게 멈춘 일과 막힌 일은 따로 보여 줘요.</dd>
             </div>
             <div>
-              <dt>남은 일과<br>개선할 일</dt>
-              <dd>끝나지 않은 항목과, 끝났지만 손보면 나아질 곳을 나눠 보여 줘요.</dd>
+              <dt>그동안의<br>변화</dt>
+              <dd>오늘, 최근 7일, 마지막으로 연 뒤에 생긴 진행과 commit, 해소된 문제를 세어요.</dd>
+            </div>
+            <div>
+              <dt>먼저 볼<br>파일</dt>
+              <dd>같이 바뀌는 파일, 열린 문제, 테스트 없음 같은 요인이 겹친 파일부터 줄 세워요.</dd>
             </div>
             <div>
               <dt>보안</dt>
-              <dd>실제로 수집된 검사 결과만 보여 줘요. 돌리지 않은 검사는 <b>미측정</b>으로 남겨요.</dd>
+              <dd>잠금 파일의 패키지를 OSV.dev에 물어본 결과만 보여 줘요. 묻지 못한 곳은 <b>미측정</b>이나 부분 측정으로 남겨요.</dd>
             </div>
           </dl>
         </article>
@@ -114,18 +121,88 @@
         <article class="pillar">
           <p class="kicker">둘째 끈</p>
           <h3>데이터 브레인</h3>
-          <p class="pillar-lead">저장소를 밤하늘 지도로 그려요. 코딩 에이전트는 MCP로 이 지도에 물어, 파일을 통째로 뒤지는 대신 필요한 근거만 가져가요.</p>
+          <p class="pillar-lead">저장소를 밤하늘 지도로 그려요. 파일은 별, 영역은 별자리예요. 코딩 에이전트는 MCP로 이 지도에 물어 경로와 심볼, 이어진 파일을 받고, 같은 기억과 진행 기록을 나눠 써요.</p>
           <figure class="brain">
             <div class="brain-sky">
               <!--@brain-sky--><svg class="brain-svg" viewBox="0 0 600 380" aria-hidden="true" focusable="false"><defs><mask id="brain-gaps" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="380"><rect width="600" height="380" fill="#fff"/><circle cx="310.4" cy="223.8" r="6.6"/><circle cx="127.8" cy="142.6" r="5.5"/><circle cx="161.3" cy="333.8" r="5.5"/><circle cx="97" cy="84.7" r="5.4"/><circle cx="332.4" cy="279.1" r="5.3"/><circle cx="179.3" cy="55.9" r="5.2"/><circle cx="355.2" cy="289.7" r="5.1"/><circle cx="275.4" cy="260.9" r="5.1"/><circle cx="199.8" cy="90" r="5"/><circle cx="516" cy="164.2" r="5"/><circle cx="302.5" cy="62.3" r="5"/><circle cx="299.8" cy="253.3" r="5"/><circle cx="330.2" cy="196" r="4.9"/><circle cx="101.1" cy="129.6" r="4.9"/><circle cx="200.3" cy="114.2" r="4.9"/><circle cx="138.9" cy="191" r="4.8"/><circle cx="312.7" cy="165.4" r="4.8"/><circle cx="429.6" cy="136.4" r="4.8"/><circle cx="88.3" cy="104.9" r="4.7"/><circle cx="270.6" cy="201.2" r="4.7"/><circle cx="448.1" cy="117.9" r="4.7"/><circle cx="253.7" cy="214.8" r="4.7"/><circle cx="105.4" cy="47.4" r="4.7"/><circle cx="309.4" cy="283.2" r="4.7"/><circle cx="325.4" cy="225.7" r="4.6"/><circle cx="228.1" cy="116.7" r="4.6"/><circle cx="345.9" cy="215.9" r="4.6"/><circle cx="529.7" cy="136.7" r="4.6"/><circle cx="281.8" cy="171" r="4.6"/><circle cx="572.5" cy="141.9" r="4.6"/><circle cx="280.4" cy="231.4" r="4.6"/><circle cx="548" cy="119.7" r="4.5"/><circle cx="376.1" cy="232" r="4.5"/><circle cx="169.6" cy="79.7" r="4.5"/><circle cx="395.3" cy="251.5" r="4.5"/><circle cx="334.7" cy="256" r="4.4"/><circle cx="80.6" cy="178.8" r="4.4"/><circle cx="365" cy="199.9" r="4.4"/><circle cx="358.8" cy="248.8" r="4.4"/><circle cx="188.7" cy="133.2" r="4.4"/><circle cx="72.9" cy="119.6" r="4.4"/><circle cx="305.1" cy="194.7" r="4.4"/><circle cx="545.4" cy="151.3" r="4.4"/><circle cx="217.9" cy="147" r="4.4"/><circle cx="199.3" cy="190.5" r="4.3"/><circle cx="287.2" cy="110.2" r="4.3"/><circle cx="341.3" cy="173.6" r="8.2"/><circle cx="338.3" cy="43" r="4.2"/><circle cx="528.2" cy="104.9" r="4.1"/><circle cx="279.6" cy="86.2" r="4.1"/><circle cx="229.6" cy="268.9" r="4.1"/><circle cx="146.3" cy="90.6" r="4.1"/><circle cx="38.3" cy="117.2" r="4.1"/><circle cx="142.9" cy="131.3" r="4.1"/><circle cx="221.3" cy="175.9" r="4.1"/><circle cx="168" cy="185.9" r="4.1"/><circle cx="193.3" cy="165.2" r="4.1"/><circle cx="51.6" cy="176.2" r="4.1"/><circle cx="162.9" cy="163.6" r="4.1"/><circle cx="336.1" cy="76.3" r="4.1"/><circle cx="506.1" cy="116.4" r="4.1"/><circle cx="134.1" cy="110.8" r="4.1"/><circle cx="228.8" cy="89.2" r="4.1"/><circle cx="107.6" cy="188.7" r="4.1"/><circle cx="167.6" cy="114.6" r="4.1"/><circle cx="87.3" cy="152.1" r="4"/><circle cx="493.5" cy="95.2" r="4"/><circle cx="479.1" cy="169.1" r="4"/><circle cx="43.7" cy="145.9" r="4"/><circle cx="140.3" cy="168.1" r="4"/><circle cx="150.2" cy="56.8" r="4"/><circle cx="111.1" cy="165.8" r="4"/><circle cx="314.2" cy="119.8" r="4"/><circle cx="62.4" cy="88.4" r="4"/><circle cx="166.6" cy="139.5" r="4"/><circle cx="209.9" cy="61.1" r="4"/><circle cx="115" cy="106.3" r="4"/><circle cx="247" cy="146.7" r="4"/><circle cx="121.2" cy="74.9" r="4"/><circle cx="483.8" cy="33.9" r="4"/><circle cx="434.3" cy="104" r="4"/><circle cx="395.3" cy="63.1" r="4"/><circle cx="76" cy="311.6" r="4"/><circle cx="513.3" cy="78.8" r="4"/><circle cx="470.3" cy="152.1" r="3.9"/><circle cx="461.1" cy="188.1" r="3.8"/><circle cx="337.4" cy="103.9" r="3.8"/><circle cx="558.2" cy="84.4" r="3.8"/><circle cx="274.6" cy="51.5" r="3.8"/><circle cx="483.2" cy="213.8" r="3.8"/><circle cx="410.9" cy="123.4" r="3.8"/><circle cx="470.3" cy="92.4" r="3.8"/><circle cx="183.8" cy="362" r="3.8"/><circle cx="374.4" cy="123.2" r="3.8"/><circle cx="552.6" cy="210.4" r="3.7"/><circle cx="489.3" cy="133.3" r="3.7"/><circle cx="424.7" cy="199.2" r="3.7"/><circle cx="497.2" cy="154.4" r="3.7"/><circle cx="496.7" cy="186.9" r="3.7"/><circle cx="582" cy="105.1" r="3.7"/><circle cx="470.3" cy="124.7" r="3.7"/><circle cx="395" cy="86.8" r="3.7"/><circle cx="451.3" cy="145.5" r="3.7"/><circle cx="513.5" cy="46.5" r="3.7"/><circle cx="440.5" cy="176.3" r="3.6"/><circle cx="578.3" cy="172.2" r="3.6"/><circle cx="541.9" cy="60.7" r="3.6"/><circle cx="401.2" cy="182.6" r="3.6"/><circle cx="424.8" cy="44.3" r="3.6"/><circle cx="514.5" cy="215.1" r="3.6"/><circle cx="446" cy="218.2" r="3.6"/><circle cx="372.1" cy="152.3" r="3.6"/><circle cx="536" cy="186.4" r="3.6"/><circle cx="453.8" cy="85.3" r="3.6"/><circle cx="481.9" cy="66.1" r="3.6"/><circle cx="453.3" cy="48.6" r="3.6"/><circle cx="437.8" cy="70.8" r="3.6"/><circle cx="394.6" cy="147.3" r="3.6"/><circle cx="396.7" cy="106" r="3.6"/><circle cx="104.9" cy="308.3" r="3.5"/><circle cx="419.5" cy="162.9" r="3.5"/><circle cx="132.4" cy="362" r="3.5"/><circle cx="120.4" cy="248.2" r="3.5"/><circle cx="132.4" cy="283.7" r="3.4"/><circle cx="154.7" cy="306" r="3.4"/><circle cx="188.1" cy="306.8" r="3.4"/><circle cx="121.1" cy="225.5" r="3.4"/><circle cx="95.2" cy="285.1" r="3.4"/><circle cx="101.5" cy="335.6" r="3.4"/><circle cx="155.9" cy="362" r="3.4"/><circle cx="72.3" cy="283.8" r="3.4"/><circle cx="81.6" cy="362" r="3.4"/><circle cx="208.5" cy="331.4" r="3.4"/><circle cx="192" cy="272.8" r="3.4"/><circle cx="145.2" cy="250.4" r="3.4"/><circle cx="214.9" cy="362" r="3.4"/><circle cx="174.1" cy="246.3" r="3.4"/><circle cx="204.8" cy="250.2" r="3.4"/><circle cx="183" cy="332.2" r="3.4"/><circle cx="152.8" cy="227.4" r="3.4"/><circle cx="262.2" cy="319.7" r="3.4"/><circle cx="230.9" cy="303.8" r="3.4"/><circle cx="240.9" cy="347.2" r="3.4"/><circle cx="171.5" cy="284" r="3.4"/><circle cx="188.2" cy="225.8" r="3.4"/><circle cx="220.9" cy="236.1" r="3.4"/><circle cx="55.6" cy="343.8" r="3.4"/><circle cx="128.1" cy="307.4" r="3.4"/><circle cx="113" cy="271.5" r="3.4"/><circle cx="84.7" cy="252.5" r="3.4"/><circle cx="40.9" cy="257.6" r="3.4"/><circle cx="35.6" cy="287" r="3.4"/><circle cx="91.6" cy="225.5" r="3.4"/><circle cx="44.8" cy="317.6" r="3.4"/><circle cx="62.3" cy="234.6" r="3.4"/><circle cx="109.5" cy="362" r="3.4"/><circle cx="208.6" cy="295.7" r="3.4"/><circle cx="249.8" cy="288.2" r="3.4"/><circle cx="132.9" cy="330.4" r="3.4"/><circle cx="154" cy="275" r="3.4"/><circle cx="541.9" cy="268.8" r="3.4"/><circle cx="469.8" cy="323.9" r="3.4"/><circle cx="482.3" cy="265.4" r="3.4"/><circle cx="510.1" cy="279.2" r="3.4"/><circle cx="496.4" cy="307.9" r="3.4"/><circle cx="455.4" cy="351.6" r="3.4"/><circle cx="452.2" cy="266.1" r="3.4"/><circle cx="513.7" cy="339.5" r="3.4"/><circle cx="411.7" cy="310" r="3.4"/><circle cx="437.7" cy="294.4" r="3.4"/><circle cx="554.3" cy="319.6" r="3.4"/></mask></defs><g class="x-links" mask="url(#brain-gaps)"><line class="xl" x1="310.4" y1="223.8" x2="193.3" y2="165.2"/><line class="xl" x1="310.4" y1="223.8" x2="336.1" y2="76.3"/><line class="xl" x1="310.4" y1="223.8" x2="166.6" y2="139.5"/><line class="xl" x1="310.4" y1="223.8" x2="174.1" y2="246.3"/><line class="xl" x1="310.4" y1="223.8" x2="204.8" y2="250.2"/><line class="xl" x1="310.4" y1="223.8" x2="262.2" y2="319.7"/><line class="xl" x1="310.4" y1="223.8" x2="188.2" y2="225.8"/><line class="xl" x1="127.8" y1="142.6" x2="154.7" y2="306"/><line class="xl" x1="127.8" y1="142.6" x2="188.1" y2="306.8"/><line class="xl" x1="127.8" y1="142.6" x2="121.1" y2="225.5"/><line class="xl" x1="127.8" y1="142.6" x2="95.2" y2="285.1"/><line class="xl" x1="127.8" y1="142.6" x2="72.3" y2="283.8"/></g><g class="area a-frontend"><g mask="url(#brain-gaps)"><line class="sl" x1="127.8" y1="142.6" x2="97" y2="84.7"/><line class="sl" x1="127.8" y1="142.6" x2="138.9" y2="191"/><line class="sl" x1="97" y1="84.7" x2="101.1" y2="129.6"/><line class="sl" x1="97" y1="84.7" x2="88.3" y2="104.9"/><line class="sl" x1="97" y1="84.7" x2="105.4" y2="47.4"/><line class="sl" x1="127.8" y1="142.6" x2="146.3" y2="90.6"/><line class="sl" x1="127.8" y1="142.6" x2="162.9" y2="163.6"/><line class="sl" x1="127.8" y1="142.6" x2="107.6" y2="188.7"/><line class="sl" x1="127.8" y1="142.6" x2="167.6" y2="114.6"/><line class="sl" x1="127.8" y1="142.6" x2="87.3" y2="152.1"/><line class="sl" x1="127.8" y1="142.6" x2="140.3" y2="168.1"/><line class="sl" x1="179.3" y1="55.9" x2="199.8" y2="90"/><line class="sl" x1="127.8" y1="142.6" x2="111.1" y2="165.8"/><line class="sl" x1="97" y1="84.7" x2="62.4" y2="88.4"/><line class="sl" x1="97" y1="84.7" x2="115" y2="106.3"/><line class="sl" x1="97" y1="84.7" x2="121.2" y2="74.9"/><line class="sl" x1="179.3" y1="55.9" x2="169.6" y2="79.7"/><line class="sl" x1="199.8" y1="90" x2="228.1" y2="116.7"/><line class="sl" x1="101.1" y1="129.6" x2="80.6" y2="178.8"/><line class="sl" x1="101.1" y1="129.6" x2="72.9" y2="119.6"/><line class="sl" x1="200.3" y1="114.2" x2="188.7" y2="133.2"/><line class="sl" x1="101.1" y1="129.6" x2="142.9" y2="131.3"/><line class="sl" x1="101.1" y1="129.6" x2="134.1" y2="110.8"/><line class="sl" x1="200.3" y1="114.2" x2="193.3" y2="165.2"/><line class="sl" x1="200.3" y1="114.2" x2="228.8" y2="89.2"/><line class="sl" x1="200.3" y1="114.2" x2="209.9" y2="61.1"/><line class="sl" x1="138.9" y1="191" x2="168" y2="185.9"/><line class="sl" x1="80.6" y1="178.8" x2="51.6" y2="176.2"/><line class="sl" x1="188.7" y1="133.2" x2="166.6" y2="139.5"/><line class="sl" x1="217.9" y1="147" x2="167.6" y2="114.6"/><line class="sl" x1="167.6" y1="114.6" x2="150.2" y2="56.8"/></g><circle cx="121.2" cy="74.9" r="1.8" style="--o:0.6"/><circle cx="247" cy="146.7" r="1.8" style="--o:0.6"/><circle cx="115" cy="106.3" r="1.8" style="--o:0.6"/><circle cx="209.9" cy="61.1" r="1.8" style="--o:0.6"/><circle cx="166.6" cy="139.5" r="1.8" style="--o:0.6"/><circle cx="62.4" cy="88.4" r="1.8" style="--o:0.6"/><circle cx="111.1" cy="165.8" r="1.8" style="--o:0.6"/><circle cx="150.2" cy="56.8" r="1.8" style="--o:0.6"/><circle cx="140.3" cy="168.1" r="1.8" style="--o:0.6"/><circle cx="43.7" cy="145.9" r="1.8" style="--o:0.6"/><circle cx="87.3" cy="152.1" r="1.8" style="--o:0.6"/><circle cx="167.6" cy="114.6" r="1.9" style="--o:0.6"/><circle cx="107.6" cy="188.7" r="1.9" style="--o:0.6"/><circle cx="228.8" cy="89.2" r="1.9" style="--o:0.6"/><circle cx="134.1" cy="110.8" r="1.9" style="--o:0.6"/><circle cx="162.9" cy="163.6" r="1.9" style="--o:0.6"/><circle cx="51.6" cy="176.2" r="1.9" style="--o:0.6"/><circle cx="193.3" cy="165.2" r="1.9" style="--o:0.6"/><circle cx="168" cy="185.9" r="1.9" style="--o:0.6"/><circle cx="221.3" cy="175.9" r="1.9" style="--o:0.6"/><circle cx="142.9" cy="131.3" r="1.9" style="--o:0.6"/><circle cx="38.3" cy="117.2" r="1.9" style="--o:0.6"/><circle cx="146.3" cy="90.6" r="1.9" style="--o:0.6"/><circle cx="199.3" cy="190.5" r="2.1" style="--o:0.7"/><circle cx="217.9" cy="147" r="2.2" style="--o:0.7"/><circle cx="72.9" cy="119.6" r="2.2" style="--o:0.7"/><circle cx="188.7" cy="133.2" r="2.2" style="--o:0.7"/><circle cx="80.6" cy="178.8" r="2.2" style="--o:0.7"/><circle cx="169.6" cy="79.7" r="2.3" style="--o:0.7"/><circle cx="228.1" cy="116.7" r="2.4" style="--o:0.7"/><circle cx="105.4" cy="47.4" r="2.5" style="--o:0.7"/><circle cx="88.3" cy="104.9" r="2.5" style="--o:0.7"/><circle cx="138.9" cy="191" r="2.6" style="--o:0.8"/><circle cx="200.3" cy="114.2" r="2.7" style="--o:0.8"/><circle cx="101.1" cy="129.6" r="2.7" style="--o:0.8"/><circle cx="199.8" cy="90" r="2.8" style="--o:0.8"/><circle cx="179.3" cy="55.9" r="3" style="--o:0.8"/><circle cx="97" cy="84.7" r="3.2" style="--o:0.8"/><circle cx="127.8" cy="142.6" r="3.3" style="--o:0.9"/></g><g class="area a-other"><g mask="url(#brain-gaps)"><line class="sl" x1="302.5" y1="62.3" x2="287.2" y2="110.2"/><line class="sl" x1="302.5" y1="62.3" x2="279.6" y2="86.2"/><line class="sl" x1="302.5" y1="62.3" x2="336.1" y2="76.3"/><line class="sl" x1="279.6" y1="86.2" x2="314.2" y2="119.8"/><line class="sl" x1="279.6" y1="86.2" x2="274.6" y2="51.5"/></g><circle cx="274.6" cy="51.5" r="1.6" style="--o:0.6"/><circle cx="337.4" cy="103.9" r="1.6" style="--o:0.6"/><circle cx="314.2" cy="119.8" r="1.8" style="--o:0.6"/><circle cx="336.1" cy="76.3" r="1.9" style="--o:0.6"/><circle cx="279.6" cy="86.2" r="1.9" style="--o:0.6"/><circle cx="338.3" cy="43" r="2" style="--o:0.7"/><circle cx="287.2" cy="110.2" r="2.1" style="--o:0.7"/><circle cx="302.5" cy="62.3" r="2.8" style="--o:0.8"/></g><g class="area a-docs"><g mask="url(#brain-gaps)"><line class="sl" x1="429.6" y1="136.4" x2="448.1" y2="117.9"/><line class="sl" x1="516" y1="164.2" x2="470.3" y2="152.1"/><line class="sl" x1="516" y1="164.2" x2="497.2" y2="154.4"/><line class="sl" x1="529.7" y1="136.7" x2="572.5" y2="141.9"/><line class="sl" x1="548" y1="119.7" x2="545.4" y2="151.3"/><line class="sl" x1="548" y1="119.7" x2="528.2" y2="104.9"/><line class="sl" x1="506.1" y1="116.4" x2="470.3" y2="152.1"/><line class="sl" x1="434.3" y1="104" x2="470.3" y2="152.1"/><line class="sl" x1="479.1" y1="169.1" x2="461.1" y2="188.1"/><line class="sl" x1="493.5" y1="95.2" x2="470.3" y2="92.4"/><line class="sl" x1="479.1" y1="169.1" x2="497.2" y2="154.4"/><line class="sl" x1="479.1" y1="169.1" x2="496.7" y2="186.9"/><line class="sl" x1="479.1" y1="169.1" x2="470.3" y2="124.7"/><line class="sl" x1="493.5" y1="95.2" x2="481.9" y2="66.1"/><line class="sl" x1="470.3" y1="152.1" x2="489.3" y2="133.3"/><line class="sl" x1="434.3" y1="104" x2="453.8" y2="85.3"/><line class="sl" x1="470.3" y1="152.1" x2="440.5" y2="176.3"/><line class="sl" x1="470.3" y1="152.1" x2="419.5" y2="162.9"/><line class="sl" x1="470.3" y1="92.4" x2="437.8" y2="70.8"/><line class="sl" x1="410.9" y1="123.4" x2="394.6" y2="147.3"/><line class="sl" x1="410.9" y1="123.4" x2="396.7" y2="106"/><line class="sl" x1="470.3" y1="124.7" x2="451.3" y2="145.5"/><line class="sl" x1="481.9" y1="66.1" x2="453.3" y2="48.6"/></g><circle cx="419.5" cy="162.9" r="1.3" style="--o:0.5"/><circle cx="396.7" cy="106" r="1.4" style="--o:0.5"/><circle cx="394.6" cy="147.3" r="1.4" style="--o:0.5"/><circle cx="437.8" cy="70.8" r="1.4" style="--o:0.6"/><circle cx="453.3" cy="48.6" r="1.4" style="--o:0.6"/><circle cx="481.9" cy="66.1" r="1.4" style="--o:0.6"/><circle cx="453.8" cy="85.3" r="1.4" style="--o:0.6"/><circle cx="536" cy="186.4" r="1.4" style="--o:0.6"/><circle cx="424.8" cy="44.3" r="1.4" style="--o:0.6"/><circle cx="514.5" cy="215.1" r="1.4" style="--o:0.6"/><circle cx="446" cy="218.2" r="1.4" style="--o:0.6"/><circle cx="372.1" cy="152.3" r="1.4" style="--o:0.6"/><circle cx="401.2" cy="182.6" r="1.4" style="--o:0.6"/><circle cx="578.3" cy="172.2" r="1.4" style="--o:0.6"/><circle cx="541.9" cy="60.7" r="1.4" style="--o:0.6"/><circle cx="440.5" cy="176.3" r="1.4" style="--o:0.6"/><circle cx="513.5" cy="46.5" r="1.5" style="--o:0.6"/><circle cx="451.3" cy="145.5" r="1.5" style="--o:0.6"/><circle cx="395" cy="86.8" r="1.5" style="--o:0.6"/><circle cx="470.3" cy="124.7" r="1.5" style="--o:0.6"/><circle cx="582" cy="105.1" r="1.5" style="--o:0.6"/><circle cx="497.2" cy="154.4" r="1.5" style="--o:0.6"/><circle cx="496.7" cy="186.9" r="1.5" style="--o:0.6"/><circle cx="424.7" cy="199.2" r="1.5" style="--o:0.6"/><circle cx="489.3" cy="133.3" r="1.5" style="--o:0.6"/><circle cx="552.6" cy="210.4" r="1.5" style="--o:0.6"/><circle cx="374.4" cy="123.2" r="1.6" style="--o:0.6"/><circle cx="470.3" cy="92.4" r="1.6" style="--o:0.6"/><circle cx="410.9" cy="123.4" r="1.6" style="--o:0.6"/><circle cx="483.2" cy="213.8" r="1.6" style="--o:0.6"/><circle cx="558.2" cy="84.4" r="1.6" style="--o:0.6"/><circle cx="461.1" cy="188.1" r="1.6" style="--o:0.6"/><circle cx="470.3" cy="152.1" r="1.7" style="--o:0.6"/><circle cx="513.3" cy="78.8" r="1.8" style="--o:0.6"/><circle cx="395.3" cy="63.1" r="1.8" style="--o:0.6"/><circle cx="434.3" cy="104" r="1.8" style="--o:0.6"/><circle cx="483.8" cy="33.9" r="1.8" style="--o:0.6"/><circle cx="479.1" cy="169.1" r="1.8" style="--o:0.6"/><circle cx="493.5" cy="95.2" r="1.8" style="--o:0.6"/><circle cx="506.1" cy="116.4" r="1.9" style="--o:0.6"/><circle cx="528.2" cy="104.9" r="1.9" style="--o:0.6"/><circle cx="545.4" cy="151.3" r="2.2" style="--o:0.7"/><circle cx="548" cy="119.7" r="2.3" style="--o:0.7"/><circle cx="572.5" cy="141.9" r="2.4" style="--o:0.7"/><circle cx="529.7" cy="136.7" r="2.4" style="--o:0.7"/><circle cx="448.1" cy="117.9" r="2.5" style="--o:0.7"/><circle cx="429.6" cy="136.4" r="2.6" style="--o:0.7"/><circle cx="516" cy="164.2" r="2.8" style="--o:0.8"/></g><g class="area a-backend"><g mask="url(#brain-gaps)"><line class="sl" x1="310.4" y1="223.8" x2="332.4" y2="279.1"/><line class="sl" x1="310.4" y1="223.8" x2="275.4" y2="260.9"/><line class="sl" x1="310.4" y1="223.8" x2="299.8" y2="253.3"/><line class="sl" x1="310.4" y1="223.8" x2="330.2" y2="196"/><line class="sl" x1="310.4" y1="223.8" x2="312.7" y2="165.4"/><line class="sl" x1="310.4" y1="223.8" x2="270.6" y2="201.2"/><line class="sl" x1="310.4" y1="223.8" x2="253.7" y2="214.8"/><line class="sl" x1="310.4" y1="223.8" x2="309.4" y2="283.2"/><line class="sl" x1="310.4" y1="223.8" x2="325.4" y2="225.7"/><line class="sl" x1="310.4" y1="223.8" x2="345.9" y2="215.9"/><line class="sl" x1="310.4" y1="223.8" x2="281.8" y2="171"/><line class="sl" x1="310.4" y1="223.8" x2="280.4" y2="231.4"/><line class="sl" x1="310.4" y1="223.8" x2="376.1" y2="232"/><line class="sl" x1="310.4" y1="223.8" x2="334.7" y2="256"/><line class="sl" x1="310.4" y1="223.8" x2="365" y2="199.9"/><line class="sl" x1="310.4" y1="223.8" x2="358.8" y2="248.8"/><line class="sl" x1="310.4" y1="223.8" x2="305.1" y2="194.7"/><line class="sl" x1="310.4" y1="223.8" x2="341.3" y2="173.6"/><line class="sl" x1="332.4" y1="279.1" x2="355.2" y2="289.7"/><line class="sl" x1="376.1" y1="232" x2="395.3" y2="251.5"/></g><circle cx="305.1" cy="194.7" r="2.2" style="--o:0.7"/><circle cx="358.8" cy="248.8" r="2.2" style="--o:0.7"/><circle cx="365" cy="199.9" r="2.2" style="--o:0.7"/><circle cx="334.7" cy="256" r="2.2" style="--o:0.7"/><circle cx="395.3" cy="251.5" r="2.3" style="--o:0.7"/><circle cx="376.1" cy="232" r="2.3" style="--o:0.7"/><circle cx="280.4" cy="231.4" r="2.4" style="--o:0.7"/><circle cx="281.8" cy="171" r="2.4" style="--o:0.7"/><circle cx="345.9" cy="215.9" r="2.4" style="--o:0.7"/><circle cx="325.4" cy="225.7" r="2.4" style="--o:0.7"/><circle cx="309.4" cy="283.2" r="2.5" style="--o:0.7"/><circle cx="253.7" cy="214.8" r="2.5" style="--o:0.7"/><circle cx="270.6" cy="201.2" r="2.5" style="--o:0.7"/><circle cx="312.7" cy="165.4" r="2.6" style="--o:0.7"/><circle cx="330.2" cy="196" r="2.7" style="--o:0.8"/><circle cx="299.8" cy="253.3" r="2.8" style="--o:0.8"/><circle cx="275.4" cy="260.9" r="2.9" style="--o:0.8"/><circle cx="355.2" cy="289.7" r="2.9" style="--o:0.8"/><circle cx="332.4" cy="279.1" r="3.1" style="--o:0.8"/><circle cx="310.4" cy="223.8" r="4.4" style="--o:1"/></g><g class="area a-tests"><g mask="url(#brain-gaps)"></g><circle cx="132.4" cy="283.7" r="1.2" style="--o:0.5"/><circle cx="154.7" cy="306" r="1.2" style="--o:0.5"/><circle cx="188.1" cy="306.8" r="1.2" style="--o:0.5"/><circle cx="121.1" cy="225.5" r="1.2" style="--o:0.5"/><circle cx="95.2" cy="285.1" r="1.2" style="--o:0.5"/><circle cx="101.5" cy="335.6" r="1.2" style="--o:0.5"/><circle cx="155.9" cy="362" r="1.2" style="--o:0.5"/><circle cx="72.3" cy="283.8" r="1.2" style="--o:0.5"/><circle cx="81.6" cy="362" r="1.2" style="--o:0.5"/><circle cx="208.5" cy="331.4" r="1.2" style="--o:0.5"/><circle cx="192" cy="272.8" r="1.2" style="--o:0.5"/><circle cx="145.2" cy="250.4" r="1.2" style="--o:0.5"/><circle cx="214.9" cy="362" r="1.2" style="--o:0.5"/><circle cx="174.1" cy="246.3" r="1.2" style="--o:0.5"/><circle cx="204.8" cy="250.2" r="1.2" style="--o:0.5"/><circle cx="183" cy="332.2" r="1.2" style="--o:0.5"/><circle cx="152.8" cy="227.4" r="1.2" style="--o:0.5"/><circle cx="262.2" cy="319.7" r="1.2" style="--o:0.5"/><circle cx="230.9" cy="303.8" r="1.2" style="--o:0.5"/><circle cx="240.9" cy="347.2" r="1.2" style="--o:0.5"/><circle cx="171.5" cy="284" r="1.2" style="--o:0.5"/><circle cx="188.2" cy="225.8" r="1.2" style="--o:0.5"/><circle cx="220.9" cy="236.1" r="1.2" style="--o:0.5"/><circle cx="55.6" cy="343.8" r="1.2" style="--o:0.5"/><circle cx="128.1" cy="307.4" r="1.2" style="--o:0.5"/><circle cx="113" cy="271.5" r="1.2" style="--o:0.5"/><circle cx="84.7" cy="252.5" r="1.2" style="--o:0.5"/><circle cx="40.9" cy="257.6" r="1.2" style="--o:0.5"/><circle cx="35.6" cy="287" r="1.2" style="--o:0.5"/><circle cx="91.6" cy="225.5" r="1.2" style="--o:0.5"/><circle cx="44.8" cy="317.6" r="1.2" style="--o:0.5"/><circle cx="62.3" cy="234.6" r="1.2" style="--o:0.5"/><circle cx="109.5" cy="362" r="1.2" style="--o:0.5"/><circle cx="208.6" cy="295.7" r="1.2" style="--o:0.5"/><circle cx="249.8" cy="288.2" r="1.2" style="--o:0.5"/><circle cx="132.9" cy="330.4" r="1.2" style="--o:0.5"/><circle cx="154" cy="275" r="1.2" style="--o:0.5"/><circle cx="120.4" cy="248.2" r="1.3" style="--o:0.5"/><circle cx="132.4" cy="362" r="1.3" style="--o:0.5"/><circle cx="104.9" cy="308.3" r="1.3" style="--o:0.5"/><circle cx="183.8" cy="362" r="1.6" style="--o:0.6"/><circle cx="76" cy="311.6" r="1.8" style="--o:0.6"/><circle cx="229.6" cy="268.9" r="1.9" style="--o:0.6"/><circle cx="161.3" cy="333.8" r="3.3" style="--o:0.8"/></g><g class="area a-database"><g mask="url(#brain-gaps)"></g><circle cx="541.9" cy="268.8" r="1.2" style="--o:0.5"/><circle cx="469.8" cy="323.9" r="1.2" style="--o:0.5"/><circle cx="482.3" cy="265.4" r="1.2" style="--o:0.5"/><circle cx="510.1" cy="279.2" r="1.2" style="--o:0.5"/><circle cx="496.4" cy="307.9" r="1.2" style="--o:0.5"/><circle cx="455.4" cy="351.6" r="1.2" style="--o:0.5"/><circle cx="452.2" cy="266.1" r="1.2" style="--o:0.5"/><circle cx="513.7" cy="339.5" r="1.2" style="--o:0.5"/><circle cx="411.7" cy="310" r="1.2" style="--o:0.5"/><circle cx="437.7" cy="294.4" r="1.2" style="--o:0.5"/><circle cx="554.3" cy="319.6" r="1.2" style="--o:0.5"/></g><g class="read-flare" transform="translate(341.3 173.6)"><circle class="rf-ring" r="9"/><path class="rf-star" d="M0 -15C0 -2.3 2.3 0 15 0C2.3 0 0 2.3 0 15C0 2.3 -2.3 0 -15 0C-2.3 0 0 -2.3 0 -15Z"/><circle class="rf-core" r="2"/></g></svg><div class="brain-labels" aria-hidden="true"><span class="al a-frontend" style="left:24%;top:9.3%">Frontend</span><span class="al a-other" style="left:51.5%;top:8.1%">Other</span><span class="al a-docs" style="left:79.2%;top:7.9%">Docs</span><span class="al a-backend" style="left:53.6%;top:40.4%">Backend</span><span class="al a-tests" style="left:24.3%;top:56.2%">Tests</span><span class="al a-database" style="left:80.7%;top:66.7%">Database</span><span class="al-focus" style="left:56.9%;top:45.7%">artifact-facets.ts</span></div><!--/@brain-sky-->
             </div>
-            <figcaption>이 하늘은 Alrescha 저장소 자체예요. <!--@brain-date--><span data-fact="date">2026년 9월 29일</span><!--/@brain-date--> 기준 파일 <!--@brain-files--><span data-fact="files">1,120</span><!--/@brain-files-->개 가운데 영역마다 중요도가 높은 <!--@brain-shown--><span data-fact="shown">171</span><!--/@brain-shown-->개를 골라 import와 문서 링크로 이었어요. 파일 이름은 에이전트가 읽은 하나만 남겼어요.</figcaption>
+            <figcaption>이 하늘은 <!--@brain-date--><span data-fact="date">2026년 9월 29일</span><!--/@brain-date--> 기준 Alrescha 저장소를 이 페이지용으로 그린 그림이에요. 파일 <!--@brain-files--><span data-fact="files">1,120</span><!--/@brain-files-->개 가운데 영역마다 중요도가 높은 <!--@brain-shown--><span data-fact="shown">171</span><!--/@brain-shown-->개를 골라 import와 문서 링크로 이었어요. 파일 이름은 아래 예시가 묻는 하나만 남겼어요.</figcaption>
           </figure>
           <dl class="legend">
             <div><dt>별자리</dt><dd>영역이에요. 프론트엔드, 백엔드, 데이터베이스, 문서, 테스트, 기타로 나눠요.</dd></div>
             <div><dt>밝기</dt><dd>중요도예요. 다른 파일이 많이 기대는 파일일수록 밝아요.</dd></div>
-            <div><dt>반짝임</dt><dd>에이전트가 그 파일을 읽은 순간이에요.</dd></div>
+            <div><dt>별표</dt><dd>아래 예시에서 에이전트가 물은 파일이에요.</dd></div>
           </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section features" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <header class="section-head">
+        <h2 id="features-title">지금 할 수 있는 일</h2>
+        <p class="lead">지금 앱에 들어 있는 화면과 에이전트 도구예요. 지금까지는 만든 사람의 저장소에서만 써 봤어요. 다른 분의 저장소에서는 파일럿에서 처음 확인해요.</p>
+      </header>
+
+      <div class="feature-grid">
+        <article class="feature-group">
+          <p class="kicker">앱 화면</p>
+          <h3>사람이 보는 곳</h3>
+          <dl class="ledger feature-list">
+            <div>
+              <dt>프로젝트 카드</dt>
+              <dd>레포를 둘 이상 연결하면 레포마다 카드 한 장이 생겨요. 마지막 스캔, 할 일, 열린 문제, 보안, 에이전트 기록을 저장된 기록 그대로 적어요.<span class="where">/app</span></dd>
+            </div>
+            <div>
+              <dt>관측소</dt>
+              <dd>레포의 파일을 별지도로 그리고, 할 일과 먼저 볼 파일, 보안, 에이전트 기록, 스캔의 신선도를 옆에 모아요.<span class="where">/app/r/&lt;owner&gt;/&lt;name&gt;</span></dd>
+            </div>
+            <div>
+              <dt>지도</dt>
+              <dd>파일, 문서, 요구사항이 어떻게 이어지는지 그래프로 펼쳐요. 영역과 증거 등급으로 걸러 봐요.<span class="where">…/map</span></dd>
+            </div>
+            <div>
+              <dt>진행</dt>
+              <dd>출처가 있는 할 일만 모아요. 출처는 문서의 경로와 줄, 또는 에이전트의 진행 기록이에요.<span class="where">…/progress</span></dd>
+            </div>
+            <div>
+              <dt>점검</dt>
+              <dd>규칙이 찾은 문제와 의존성 감사를 모아요. spec이나 ADR 문서가 없는 저장소에서는 문서와 코드가 어긋난 곳을 찾지 못하고, 테스트 없는 파일 위주로 표시돼요.<span class="where">…/inspection</span></dd>
+            </div>
+            <div>
+              <dt>영수증</dt>
+              <dd>분석한 commit마다 in-toto 형식의 기록을 남겨요. 서버가 digest를 다시 계산해 변조를 가려내고, 다룬 파일이 그 뒤에 바뀌면 stale로 표시해요. 서명은 아직 없어요.<span class="where">…/receipts</span></dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="feature-group">
+          <p class="kicker">MCP 도구</p>
+          <h3>에이전트가 쓰는 곳</h3>
+          <dl class="ledger feature-list">
+            <div>
+              <dt>연결</dt>
+              <dd>설정의 MCP 접근 화면에서 토큰을 만들고, 지시 블록과 연결 설정을 복사해 붙여요. 지시 블록은 Claude Code, Codex, Cursor용이 있고, 연결 설정은 지금 모든 클라이언트에 같은 JSON 하나예요.<span class="where">/app/settings/mcp</span></dd>
+            </div>
+            <div>
+              <dt>토큰</dt>
+              <dd>조회만 하는 토큰은 90일, 기록 권한이 있는 토큰은 30일 뒤에 만료돼요. 만료가 다가오면 화면이 알려 줘요.<span class="where">mcp:read · mcp:write</span></dd>
+            </div>
+            <div>
+              <dt>찾기</dt>
+              <dd>경로, 심볼과 줄 범위, 이어진 파일, 바꾸면 닿는 곳을 돌려줘요. 원본 코드는 답에 싣지 않아요.<span class="where">search_index · get_artifact · get_neighbors · impact_of · trace_path</span></dd>
+            </div>
+            <div>
+              <dt>문제</dt>
+              <dd>규칙이 찾은 문제를 근거 위치와 함께 돌려줘요.<span class="where">get_findings</span></dd>
+            </div>
+            <div>
+              <dt>기억과 진행</dt>
+              <dd>에이전트끼리 같은 기억과 진행 기록을 써요. 진행 기록은 진행 화면과 관측소에 보여요. 멈춘 일은 todo id로 이어받아요.<span class="where">memory_read · memory_write · log_progress</span></dd>
+            </div>
+          </dl>
+          <p class="group-note">도구는 모두 21개예요. 읽기 13개, 기록 8개예요.</p>
         </article>
       </div>
     </div>
@@ -135,7 +212,7 @@
     <div class="wrap">
       <header class="section-head">
         <h2 id="moment-title">에이전트가 읽는 순간</h2>
-        <p class="lead">에이전트가 MCP로 물으면 지도에서 그 파일의 별이 반짝이고, 에이전트는 파일 경로와 줄&nbsp;범위를 받아요.</p>
+        <p class="lead">에이전트가 MCP로 물으면, Alrescha는 스캔해 둔 지도에서 답을 찾아 파일 경로와 줄&nbsp;범위를 돌려줘요.</p>
       </header>
 
       <ol class="scene">
@@ -147,20 +224,20 @@
         </li>
         <li class="step step-flare">
           <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 1C12 10 13.6 12 23 12C13.6 12 12 13.6 12 23C12 13.6 10.4 12 1 12C10.4 12 12 10 12 1Z"/></svg></span>
-          <h3>별이 반짝이고</h3>
-          <p>질문에 걸린 파일의 별이 지도에서 빛나요. 에이전트가 무엇을 읽었는지 사람도 같은 화면에서 봐요.</p>
+          <h3>지도에서 찾고</h3>
+          <p>질문에 맞는 파일과 심볼, 그 파일에 이어진 파일을 골라요. 그림의 별표가 이 질문에 걸린 파일이에요.</p>
           <div class="zoom"><!--@brain-zoom--><svg class="zoom-svg" viewBox="205.9 150.7 240 96" aria-hidden="true" focusable="false"><g mask="url(#brain-gaps)"><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="332.4" y2="279.1"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="275.4" y2="260.9"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="299.8" y2="253.3"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="330.2" y2="196"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="312.7" y2="165.4"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="270.6" y2="201.2"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="253.7" y2="214.8"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="309.4" y2="283.2"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="325.4" y2="225.7"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="345.9" y2="215.9"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="281.8" y2="171"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="280.4" y2="231.4"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="376.1" y2="232"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="334.7" y2="256"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="365" y2="199.9"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="358.8" y2="248.8"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="305.1" y2="194.7"/></g><g class="area a-backend"><line class="sl" x1="310.4" y1="223.8" x2="341.3" y2="173.6"/></g><g class="area a-backend"><line class="sl" x1="376.1" y1="232" x2="395.3" y2="251.5"/></g><g class="area a-frontend"><line class="sl" x1="217.9" y1="147" x2="167.6" y2="114.6"/></g><g class="area a-docs"><line class="sl" x1="470.3" y1="152.1" x2="440.5" y2="176.3"/></g><g class="area a-docs"><line class="sl" x1="470.3" y1="152.1" x2="419.5" y2="162.9"/></g><g class="area a-docs"><line class="sl" x1="410.9" y1="123.4" x2="394.6" y2="147.3"/></g><g class="area a-docs"><line class="sl" x1="470.3" y1="124.7" x2="451.3" y2="145.5"/></g></g><g class="area a-backend"><circle cx="310.4" cy="223.8" r="4.4" style="--o:1"/></g><g class="area a-backend"><circle cx="299.8" cy="253.3" r="2.8" style="--o:0.8"/></g><g class="area a-backend"><circle cx="330.2" cy="196" r="2.7" style="--o:0.8"/></g><g class="area a-backend"><circle cx="312.7" cy="165.4" r="2.6" style="--o:0.7"/></g><g class="area a-backend"><circle cx="270.6" cy="201.2" r="2.5" style="--o:0.7"/></g><g class="area a-backend"><circle cx="253.7" cy="214.8" r="2.5" style="--o:0.7"/></g><g class="area a-backend"><circle cx="325.4" cy="225.7" r="2.4" style="--o:0.7"/></g><g class="area a-backend"><circle cx="345.9" cy="215.9" r="2.4" style="--o:0.7"/></g><g class="area a-backend"><circle cx="281.8" cy="171" r="2.4" style="--o:0.7"/></g><g class="area a-backend"><circle cx="280.4" cy="231.4" r="2.4" style="--o:0.7"/></g><g class="area a-backend"><circle cx="376.1" cy="232" r="2.3" style="--o:0.7"/></g><g class="area a-backend"><circle cx="395.3" cy="251.5" r="2.3" style="--o:0.7"/></g><g class="area a-backend"><circle cx="334.7" cy="256" r="2.2" style="--o:0.7"/></g><g class="area a-backend"><circle cx="365" cy="199.9" r="2.2" style="--o:0.7"/></g><g class="area a-backend"><circle cx="358.8" cy="248.8" r="2.2" style="--o:0.7"/></g><g class="area a-backend"><circle cx="305.1" cy="194.7" r="2.2" style="--o:0.7"/></g><g class="area a-frontend"><circle cx="217.9" cy="147" r="2.2" style="--o:0.7"/></g><g class="area a-frontend"><circle cx="199.3" cy="190.5" r="2.1" style="--o:0.7"/></g><g class="area a-frontend"><circle cx="221.3" cy="175.9" r="1.9" style="--o:0.6"/></g><g class="area a-frontend"><circle cx="247" cy="146.7" r="1.8" style="--o:0.6"/></g><g class="area a-docs"><circle cx="424.7" cy="199.2" r="1.5" style="--o:0.6"/></g><g class="area a-docs"><circle cx="451.3" cy="145.5" r="1.5" style="--o:0.6"/></g><g class="area a-docs"><circle cx="440.5" cy="176.3" r="1.4" style="--o:0.6"/></g><g class="area a-docs"><circle cx="401.2" cy="182.6" r="1.4" style="--o:0.6"/></g><g class="area a-docs"><circle cx="446" cy="218.2" r="1.4" style="--o:0.6"/></g><g class="area a-docs"><circle cx="372.1" cy="152.3" r="1.4" style="--o:0.6"/></g><g class="area a-docs"><circle cx="394.6" cy="147.3" r="1.4" style="--o:0.5"/></g><g class="area a-docs"><circle cx="419.5" cy="162.9" r="1.3" style="--o:0.5"/></g><g class="area a-tests"><circle cx="204.8" cy="250.2" r="1.2" style="--o:0.5"/></g><g class="area a-tests"><circle cx="220.9" cy="236.1" r="1.2" style="--o:0.5"/></g><g class="read-flare" transform="translate(341.3 173.6)"><circle class="rf-ring" r="9"/><path class="rf-star" d="M0 -15C0 -2.3 2.3 0 15 0C2.3 0 0 2.3 0 15C0 2.3 -2.3 0 -15 0C-2.3 0 0 -2.3 0 -15Z"/><circle class="rf-core" r="2"/></g></svg><!--/@brain-zoom--><p class="path mono">packages/<wbr>core/<wbr>src/<wbr>ingest/<wbr>artifact-facets.ts</p></div>
         </li>
         <li class="step step-take">
           <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24"><circle class="ring" cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2.5"/></svg></span>
           <h3>근거를 받아요</h3>
-          <p>에이전트는 경로와 줄&nbsp;범위를 받아, 자기 작업 공간에서 그&nbsp;자리를 바로 열 수 있어요. 원본 코드는 Alrescha에 저장되지 않아요.</p>
+          <p>에이전트는 경로와 줄&nbsp;범위를 받아, 자기 작업 공간에서 그&nbsp;자리를 바로 열 수 있어요. 원본 코드는 답에 실리지 않아요.</p>
           <pre class="code spans"><code><span class="k">type</span>     BrainArea         <span class="ln">263–264</span>
 <span class="k">const</span>    BRAIN_AREAS       <span class="ln">266–273</span>
 <span class="k">function</span> deriveBrainArea   <span class="ln">275–288</span></code></pre>
         </li>
       </ol>
-      <p class="footnote">응답을 줄여 옮긴 예시예요. 줄 번호는 <!--@brain-date--><span data-fact="date">2026년 9월 29일</span><!--/@brain-date--> Alrescha 저장소 기준이에요.</p>
+      <p class="footnote">응답을 줄여 옮긴 예시예요. 줄 번호는 <!--@brain-date--><span data-fact="date">2026년 9월 29일</span><!--/@brain-date--> Alrescha 저장소 기준이에요. 파일럿에서는 AI 요약을 쓰지 않아서, 문서의 발췌는 비어 있어요. 에이전트가 무엇을 물었는지는 접근 기록으로 30일 동안 남고, 관측소에서 마지막 읽기를 볼 수 있어요.</p>
     </div>
   </section>
 
@@ -172,27 +249,48 @@
       <ul class="promise-list">
         <li>
           <h3>확인됨은 실행 증거로만</h3>
-          <p>CI 테스트 리포트처럼 실제로 실행한 증거가 있을 때만 <span class="mono">verified</span>라고 표시해요. AI가 추론한 판단은 늘 <span class="mono">inferred</span>로 남아요.</p>
+          <p>GitHub Actions의 테스트 리포트(JUnit, Vitest, Jest)에서 실제로 통과한 테스트 파일만 <span class="mono">verified</span>로 올려요. 규칙이 찾은 문제는 모두 <span class="mono">inferred</span>예요. 영수증의 ‘구현 verified’ 수는 이름 일치와 체크 표시로 센 값이라 실행 증거가 아니에요.</p>
         </li>
         <li>
           <h3>원본 코드는 저장하지 않아요</h3>
-          <p>분석하는 순간에만 읽고 버려요. 남는 건 경로, 심볼 이름, 줄&nbsp;범위, 요약 같은 메타데이터예요.</p>
+          <p>스캔하는 동안만 읽고 버려요. 남는 건 경로, digest, 심볼 이름과 줄 위치, 파일 사이의 연결이에요. 요구사항 문장, 체크박스 제목, <span class="mono">WHY:</span> 주석 같은 짧은 글과 에이전트가 쓴 기록은 저장해요. 직접 ‘라이브러리에 저장’을 누른 지시문 파일만 본문을 저장해요.</p>
+        </li>
+        <li>
+          <h3>파일럿 지표는 동의한 뒤에만</h3>
+          <p>에이전트의 MCP 호출 기록은 30일 동안 남아요. 이 기록으로 만드는 통계와 주간 파일럿 지표 파일은 owner가 통계 화면에서 동의해야 열려요. 주간 파일은 10월 24일부터 받을 수 있고, owner가 직접 내려받아 건네요. 소스 코드, 파일 경로, 저장소 이름은 넣지 않아요. 동의를 끄면 바로 멈춰요.</p>
         </li>
         <li>
           <h3>재지 않은 숫자는 말하지 않아요</h3>
           <p>토큰이 얼마나 줄었는지, 정확도가 얼마나 올랐는지는 측정한 뒤에 가정과 함께 말해요. 이 페이지에 효율 수치가 없는 이유예요.</p>
         </li>
+        <li>
+          <h3>아직 약속하지 않는 것</h3>
+          <ul class="not-yet">
+            <li>토큰 절감과 정확도 향상. 미리 정해 둔 벤치마크에서 아직 기준을 넘지 못했어요.</li>
+            <li>spec이나 ADR 문서가 없는 저장소에서 문서와 코드가 어긋난 곳을 찾는 일.</li>
+            <li>AI가 쓴 요약과 문서 발췌. 파일럿에서는 AI 기능을 쓰지 않아요.</li>
+            <li>에이전트가 읽을 때 지도의 별이 실시간으로 반짝이는 표시.</li>
+          </ul>
+        </li>
       </ul>
     </div>
   </section>
 
-  <section class="section closing" aria-labelledby="closing-title">
+  <section class="section closing" id="pilot" aria-labelledby="closing-title">
     <canvas class="field field-closing" aria-hidden="true"></canvas>
     <div class="wrap closing-inner">
-      <h2 id="closing-title">지도는 직접 열어 볼 때<br>가장 잘 보여요</h2>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://arr-app-web.vercel.app/">데모 보기</a>
-        <a class="btn btn-quiet" href="https://arr-app-web.vercel.app/auth/login">로그인</a>
+      <div class="closing-copy">
+        <h2 id="closing-title">초대제 파일럿을<br>준비하고 있어요</h2>
+        <p>지금까지는 만든 사람이 자기 저장소에서만 써 왔어요. 파일럿에서는 초대한 분의 GitHub 저장소로 연결, 첫 스캔, 에이전트 연결까지 함께 확인해요. Claude Code나 Codex로 만들고 있는 저장소면 좋아요.</p>
+        <p>파일럿은 무료이고 AI 기능은 쓰지 않아요. 가격은 아직 정하지 않았어요.</p>
+        <p>파일럿 문의는 GitHub 이슈로 남겨 주세요. 이슈는 누구나 볼 수 있으니 이메일 같은 연락처는 적지 말아 주세요. 그 이슈에서 이어서 이야기해요.</p>
+      </div>
+      <div class="closing-side">
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/2klips/alrescha/issues/new">GitHub 이슈로 문의</a>
+          <a class="btn btn-quiet" href="https://arr-app-web.vercel.app/">데모 보기</a>
+        </div>
+        <p class="demo-note">데모는 예시 데이터로 움직여요. 실제 계정이나 저장소를 읽지 않고, 앱에 아직 없는 화면도 있어요.</p>
       </div>
     </div>
   </section>

@@ -138,7 +138,7 @@
           return m ? { s: m.a, ox: m.e - rect.left, oy: m.f - rect.top } : { s: 0.7, ox: 0, oy: 0 };
         },
         // Labels knock out the stars behind them, as on a printed atlas.
-        boxes(hero, ".hero-copy h1, .hero-copy .lead, .hero-copy .btn", 22, 10)
+        boxes(hero, ".hero-copy .status, .hero-copy h1, .hero-copy .lead, .hero-copy .btn", 22, 10)
           .concat(boxes(hero, ".sky-labels .lb, .knot-caption", 3, 2))
           .concat(headerBoxes(hero)),
         (() => {
@@ -158,7 +158,7 @@
         closing,
         // Pegasus and the western fish, small, to the right of the copy.
         (rect) => ({ s: 0.5, ox: rect.width * 0.72 - 380 * 0.5, oy: rect.height * 0.5 + 60 * 0.5 }),
-        boxes(closing, "h2, .btn"),
+        boxes(closing, "h2, p, .btn"),
         () => 0.55,
         true,
       );

@@ -440,6 +440,28 @@ pre {
   margin-top: 40px;
 }
 
+/* Where the product stands today: one plain line, the knot ring as its mark. */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--fg-muted);
+  font-size: var(--step-15);
+  line-height: 1.4;
+}
+
+.hero .status {
+  margin-bottom: 24px;
+}
+
+.status-mark {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+}
+
 /* Desktop: the chart is hung from the copy. The knot star sits a fixed
    distance right of the copy's left edge and just below its last line, so
    the northern cord always rises clear of the words; the width is capped so
@@ -912,6 +934,48 @@ pre {
   line-height: 1.7;
 }
 
+/* What it does today: screens and MCP tools, side by side. */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(40px, 6vw, 96px);
+  margin-top: clamp(56px, 7vw, 88px);
+}
+
+.feature-group {
+  padding-top: 28px;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.feature-group h3 {
+  margin-top: 12px;
+  font-size: var(--step-24);
+  line-height: 1.35;
+}
+
+.feature-list > div {
+  grid-template-columns: 7.5em minmax(0, 1fr);
+}
+
+/* Paths and tool names only, never Korean. */
+.where {
+  display: block;
+  margin-top: 6px;
+  color: var(--fg-faint);
+  font-family: var(--font-mono);
+  font-size: var(--step-13);
+  font-variant-ligatures: none;
+  line-height: 1.6;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.group-note {
+  margin-top: 16px;
+  color: var(--fg-faint);
+  font-size: var(--step-13);
+}
+
 /* The moment */
 .scene {
   position: relative;
@@ -1026,6 +1090,7 @@ pre {
 
 .footnote {
   margin-top: 48px;
+  max-width: 46rem;
   color: var(--fg-faint);
   font-size: var(--step-13);
 }
@@ -1038,7 +1103,7 @@ pre {
   border-bottom: 1px solid var(--rule);
 }
 
-.promise-list li {
+.promise-list > li {
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: clamp(20px, 6vw, 96px);
@@ -1052,7 +1117,8 @@ pre {
   line-height: 1.4;
 }
 
-.promise-list p {
+.promise-list p,
+.not-yet {
   max-width: 34em;
   color: var(--fg-muted);
   font-size: var(--step-17);
@@ -1061,6 +1127,32 @@ pre {
 .promise-list .mono {
   color: var(--fg);
   font-size: var(--step-15);
+}
+
+.not-yet {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.not-yet li {
+  position: relative;
+  padding-left: 1.4em;
+}
+
+.not-yet li + li {
+  margin-top: 10px;
+}
+
+/* A short dash, as an atlas marks what it leaves out. */
+.not-yet li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.7em;
+  height: 1px;
+  background: var(--fg-faint);
 }
 
 /* Closing: the same real sky, quieter. */
@@ -1084,6 +1176,33 @@ pre {
 
 .closing h2 {
   font-size: var(--step-40);
+  line-height: 1.3;
+}
+
+.closing-copy {
+  max-width: 36rem;
+}
+
+.closing-copy p {
+  margin-top: 16px;
+  max-width: 34em;
+  color: var(--fg-muted);
+}
+
+.closing-copy h2 + p {
+  margin-top: 28px;
+}
+
+.closing-side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 24rem;
+}
+
+.demo-note {
+  color: var(--fg-faint);
+  font-size: var(--step-13);
 }
 
 /* Footer */
@@ -1235,11 +1354,12 @@ pre {
   }
 
   .pillars,
-  .promise-list li {
+  .feature-grid,
+  .promise-list > li {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .promise-list li {
+  .promise-list > li {
     gap: 12px;
     padding: 28px 0;
   }
